@@ -1,14 +1,12 @@
-// app/body-awareness/page.tsx
+// app/body-map/page.tsx
 "use client";
 
 import { Header } from "@/components/header";
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
-import Link from "next/link";
 
-export default function BodyAwarenessPage() {
+export default function BodyMapPage() {
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [intensity, setIntensity] = useState<number>(0);
   const [insight, setInsight] = useState<string | null>(null);
@@ -36,7 +34,6 @@ export default function BodyAwarenessPage() {
 
   const generateInsight = (area: string | null, level: number) => {
     if (!area) return;
-    // Placeholder insights (replace with real data or AI call)
     const insights: Record<string, string> = {
       shoulder: "Shoulder pain may be linked to stress, posture issues, or tension in the neck and upper back.",
       back: "Back pain often co-occurs with tension, poor sleep, or emotional holding.",
@@ -49,17 +46,16 @@ export default function BodyAwarenessPage() {
     <main className="min-h-screen flex flex-col">
       <Header />
       <div className="container max-w-3xl py-12 px-4 flex-1">
-        <h1 className="text-3xl mb-4 text-center">body awareness</h1>
+        <h1 className="text-3xl mb-4 text-center">body map</h1>
         <p className="text-center text-slate/70 mb-12">
-          tap and hold a part of the body to explore your sensations and related insights
+          tap and hold a part of the body to explore sensations and related insights
         </p>
 
         <Card className="border-none shadow-sm rounded-2xl overflow-hidden bg-mist/20">
           <CardHeader className="pb-2 text-center">
-            <h2 className="text-xl">body map</h2>
+            <h2 className="text-xl">interactive map</h2>
           </CardHeader>
           <CardContent className="flex justify-center py-8">
-            {/* Simplified clickable zones */}
             <div className="relative w-[200px] h-[400px]">
               <div
                 className="absolute top-[20%] left-[40%] w-[40px] h-[40px] bg-blush/40 rounded-full cursor-pointer"
