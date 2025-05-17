@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 210 10% 41%;
+
+    --card: 40 33% 98%;
+    --card-foreground: 210 10% 41%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 210 10% 41%;
+
+    --primary: 154 24% 88%;
+    --primary-foreground: 210 10% 41%;
+
+    --secondary: 10 30% 93%;
+    --secondary-foreground: 210 10% 41%;
+
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 10 30% 93%;
+    --accent-foreground: 210 10% 41%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 10% 98%;
+
+    --border: 210 10% 90%;
+    --input: 210 10% 90%;
+    --ring: 210 10% 41%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-light lowercase;
+  }
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-serif {
+  font-family: "Canela", serif;
+}
+
+.bg-bone {
+  background-color: #faf9f7;
+}
+
+.bg-mist {
+  background-color: #ddeae4;
+}
+
+.bg-blush {
+  background-color: #f4eae6;
+}
+
+.text-slate {
+  color: #5e6a75;
+}
+
+/* Breathing animations */
+@keyframes inhale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes exhale {
+  0% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+.animate-inhale {
+  animation: inhale 4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.animate-hold {
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
+.animate-exhale {
+  animation: exhale 6s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.animate-rest {
+  transform: scale(0.8);
+  opacity: 0.3;
+}
+
+/* Pulse animation for elements */
+@keyframes gentle-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 6s infinite ease-in-out;
+}
